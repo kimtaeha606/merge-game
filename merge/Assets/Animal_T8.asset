@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0740abe51aad4f7448645063872fdbec, type: 3}
+  m_Name: Animal_T8
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalData
+  id: T8
+  tier: 8
+  incomePerTick: 8
+  tickInterval: 3
+  nextTierAnimal: {fileID: 11400000, guid: 8ebbc006448c3914da89ebab078f8bd8, type: 2}

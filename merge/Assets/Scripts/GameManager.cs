@@ -24,16 +24,16 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        AnimalInstance animal = new AnimalInstance(/*...*/);
+        //AnimalInstance animal = new AnimalInstance(/*...*/);
 
-        bool placed = boardManager.TryPlaceAt(idx, animal);
+        //bool placed = boardManager.TryPlaceAt(idx, animal);
         
-        if (placed)
-        {
-            Debug.Log($"Animal placed at slot index {idx}");
-        }
+        //if (placed)
+        //{
+            //Debug.Log($"Animal placed at slot index {idx}");
+        //}
 
-        if (!placed)
-            Debug.LogWarning($"배치 실패: idx={idx}");
+        //if (!placed)
+          //  Debug.LogWarning($"배치 실패: idx={idx}");
     }
 }
