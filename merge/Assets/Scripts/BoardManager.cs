@@ -42,5 +42,20 @@ public class BoardManager : MonoBehaviour
         index = empties[pick];
         return true;
     }
+
+    /// <summary>
+    /// 지정한 칸에 배치한다. (칸이 비어있을 때만)
+    /// </summary>
+    public bool TryPlaceAt(int index, AnimalInstance instance)
+    {
+        if (slots == null || slots.Length != 9) return false;
+        if (index < 0 || index >= 9) return false;
+        if (instance == null) return false;
+        if (slots[index] != null) return false;
+
+        slots[index] = instance;
+        return true;
+    }
     
+
 }
