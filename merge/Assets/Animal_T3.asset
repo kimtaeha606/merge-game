@@ -17,3 +17,4 @@ MonoBehaviour:
   incomePerTick: 3
   tickInterval: 3
   nextTierAnimal: {fileID: 11400000, guid: f71a0e7699b741449be1de7bb0ff0595, type: 2}
+  sprite: {fileID: -6013747887480821675, guid: 9f0e204bb2407d2448365835cf1189ab, type: 3}

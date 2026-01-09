@@ -15,27 +15,21 @@ public class PurchaseManager : MonoBehaviour
     public event Action OnPurchaseFailed; // (선택) 돈 부족/기타 사유 구분이 필요하면 enum 추가
 
     public void RequestPurchase(int cost)
-    {
-        if (cost <= 0)
-        {
-            Debug.LogWarning($"PurchaseManager: invalid cost={cost}");
-            OnPurchaseFailed?.Invoke();
-            return;
-        }
+{
+    Debug.Log($"[PM] enter cost={cost}");
 
-        if (money == null)
-        {
-            Debug.LogError("PurchaseManager: EconomyManager reference is missing.");
-            OnPurchaseFailed?.Invoke();
-            return;
-        }
+    Debug.Log("[PM] before money null check");
+    if (money == null) { Debug.LogError("[PM] money missing"); OnPurchaseFailed?.Invoke(); return; }
 
-        if (!money.TrySpend(cost))
-        {
-            OnPurchaseFailed?.Invoke();
-            return;
-        }
+    Debug.Log("[PM] before TrySpend");
+    bool ok = money.TrySpend(cost);
+    Debug.Log($"[PM] after TrySpend ok={ok}");
 
-        OnPurchaseSucceeded?.Invoke();
-    }
+    if (!ok) { Debug.Log("[PM] failed spend"); OnPurchaseFailed?.Invoke(); return; }
+
+    Debug.Log("[PM] before success invoke");
+    OnPurchaseSucceeded?.Invoke();
+    Debug.Log("[PM] after success invoke");
+}
+
 }

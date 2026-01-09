@@ -11,30 +11,46 @@ public class PurchaseRequestor : MonoBehaviour
     [SerializeField] private DiceManager diceManager;
     [SerializeField] private BoardManager boardManager;
 
+    private void OnEnable()  => Debug.Log("PurchaseRequestor OnEnable");
+    private void Start()     => Debug.Log("PurchaseRequestor Start");
+
+
+
+
     // UI Button OnClick()에 연결
     public void OnClickPurchase()
     {
+        Debug.Log("OnClickPurchase CALLED - A");
+
+        Debug.Log($"Refs: pm={(purchaseManager!=null)} dm={(diceManager!=null)} bm={(boardManager!=null)}");
+
         if (purchaseManager == null || diceManager == null || boardManager == null)
         {
             Debug.LogError("PurchaseRequestor: Missing references.");
             return;
         }
 
-        // 1) 보드 빈칸 선행 체크 (공간 없으면 결제 자체를 막음)
+        Debug.Log("OnClickPurchase - B (before empty check)");
+
         if (!boardManager.TryGetRandomEmptyIndex(out _))
         {
             Debug.Log("공간 없음");
             return;
         }
 
-        // 2) 비용 산출 후 결제 요청
+        Debug.Log("OnClickPurchase - C (after empty check)");
+
         int cost = diceManager.GetRollCost();
+        Debug.Log($"OnClickPurchase - D cost={cost}");
+
         if (cost <= 0)
         {
             Debug.LogWarning($"PurchaseRequestor: invalid cost={cost}");
             return;
         }
 
-        purchaseManager.RequestPurchase(cost);
+        Debug.Log("OnClickPurchase - E (request purchase)");
+        purchaseManager.RequestPurchase(1);
+        Debug.Log("OnClickPurchase - F (after request)");
     }
 }
