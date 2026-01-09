@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public sealed class MergeManager
+public sealed class MergeManager : MonoBehaviour
 {
     /// <summary>
     /// 드래그 앤 드롭용 처리:
