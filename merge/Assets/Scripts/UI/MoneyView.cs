@@ -1,3 +1,5 @@
+/// 씬에 붙일 때 참고: https://chatgpt.com/c/696088f6-7a04-8320-8cb9-710e2caad528
+
 using TMPro;
 using UnityEngine;
 
