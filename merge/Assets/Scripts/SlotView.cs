@@ -21,16 +21,16 @@ public sealed class SlotView : MonoBehaviour, IDropHandler
             return;
         }
 
-        var animalView = go.GetComponent<AnimalView>();
-        if (animalView == null)
+        var drag = go.GetComponent<Drag>();
+        if (drag == null)
         {
             Debug.Log($"[SlotView] Drop on {index} but AnimalView not found on dragged");
             return;
         }
 
-        Debug.Log($"[SlotView] Drop success: from {animalView.SlotIndex} -> to {index}");
+        Debug.Log($"[SlotView] Drop success: from {drag.SlotIndex} -> to {index}");
 
-        int from = animalView.SlotIndex;
+        int from = drag.SlotIndex;
         int to = index;
 
         boardUI.HandleDrop(from, to);
