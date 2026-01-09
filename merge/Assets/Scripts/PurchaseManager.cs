@@ -9,7 +9,7 @@ using UnityEngine;
 public class PurchaseManager : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private MoneyManager money;
+    [SerializeField]  MoneyManager money;
 
     public event Action OnPurchaseSucceeded;
     public event Action OnPurchaseFailed; // (선택) 돈 부족/기타 사유 구분이 필요하면 enum 추가
