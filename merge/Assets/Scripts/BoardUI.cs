@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public sealed class BoardUI : MonoBehaviour
@@ -98,6 +99,12 @@ public sealed class BoardUI : MonoBehaviour
 
             // (다음 단계) 에셋 이미지/텍스트 갱신은 여기서
             // if (hasAnimal) drag.SetSprite(animal.Data.icon);
+
+            drag.BindSlotIndex(slotIndex);
+            drag.gameObject.SetActive(hasAnimal);
+
+            if (hasAnimal) drag.SetIcon(animal.Data.sprite);
+            else drag.SetIcon(null);
         }
     }
 }

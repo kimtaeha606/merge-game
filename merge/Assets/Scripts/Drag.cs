@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 // 인터페이스 상속이 반드시 필요합니다.
 public sealed class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -7,6 +8,9 @@ public sealed class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     [Header("State")]
     [SerializeField] private int slotIndex;
     public int SlotIndex => slotIndex;
+
+    [Header("UI")]
+    [SerializeField] private Image iconImage;
 
     [Header("Refs")]
     [SerializeField] private Canvas canvas; 
@@ -18,8 +22,17 @@ public sealed class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     private void Awake()
     {
+        if (iconImage == null)
+            iconImage = GetComponent<Image>();
         // UI 요소는 RectTransform을 사용하므로 캐싱해두면 좋습니다.
         rectTransform = GetComponent<RectTransform>();
+    }
+
+    public void SetIcon(Sprite sprite)
+    {
+        if (iconImage == null) return;
+        iconImage.sprite = sprite;
+        iconImage.enabled = (sprite != null);
     }
 
     public void BindSlotIndex(int index) => slotIndex = index;
