@@ -4,7 +4,10 @@ using System.Collections.Generic;
 
 public class BoardManager : MonoBehaviour
 {
-    private object?[] slots;
+
+    private const int Size = 9;
+
+    [SerializeField] private AnimalInstance[] slots;
 
     /// <summary>
     /// 3×3 보드를 빈 상태로 리셋한다.
@@ -12,7 +15,7 @@ public class BoardManager : MonoBehaviour
     /// </summary>
     public void ResetBoard()
     {
-        slots = new object?[9]; // 기본값 null → 전부 빈 칸
+        slots = new AnimalInstance[Size]; // 기본값 null → 전부 빈 칸
     }
 
 
@@ -24,14 +27,15 @@ public class BoardManager : MonoBehaviour
     public bool TryGetRandomEmptyIndex(out int index)
     {
         index = -1;
-
-        // 빈 칸 수집
+        if (slots == null) return false;
+        
         List<int> empties = null;
+        
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i] != null) continue;
 
-            empties ??= new List<int>(9);
+            empties ??= new List<int>(Size);
             empties.Add(i);
         }
 
@@ -57,5 +61,16 @@ public class BoardManager : MonoBehaviour
         return true;
     }
     
+    public bool TryGetAt(int index, out AnimalInstance instance)
+    {
+        instance = null;
 
+        if (slots == null) return false;
+        if (index < 0 || index >= Size) return false;
+
+        instance = slots[index];
+        return instance != null;
+    }
+
+    public int SlotCount => Size;
 }
