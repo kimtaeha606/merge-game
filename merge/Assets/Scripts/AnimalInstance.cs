@@ -19,4 +19,15 @@ public sealed class AnimalInstance
         this.data = data;
         TickTimer = 0f;
     }
+
+    public bool TrySetData(AnimalData newData, bool restTickTimer = true)
+    {
+        if (newData == null) return false;
+
+        data = newData;
+
+        if (restTickTimer)
+            TickTimer = 0f;
+        return true;
+    }
 }

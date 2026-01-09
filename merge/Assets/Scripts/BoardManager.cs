@@ -72,5 +72,34 @@ public class BoardManager : MonoBehaviour
         return instance != null;
     }
 
+    public bool ClearAt(int index)
+    {
+        if (slots == null) return false;
+        if (index < 0 || index >= Size) return false;
+
+        slots[index] = null;
+        return true;
+    }
+
+    public bool TrySetAt(int index, AnimalInstance instance)
+    {
+        if (slots == null) return false;
+        if (index < 0 || index >= Size) return false;
+
+        slots[index] = instance;
+        return true;
+    }
+    public bool TrySwap(int a, int b)
+    {
+        if (slots == null) return false;
+        if (a < 0 || a >= Size) return false;
+        if (b < 0 || b >= Size) return false;
+        if (a == b) return false;
+
+        (slots[a], slots[b]) = (slots[b], slots[a]);
+        return true;
+    }
+    
+    
     public int SlotCount => Size;
 }
