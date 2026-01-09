@@ -69,7 +69,7 @@ public sealed class BoardUI : MonoBehaviour
             bool hasAnimal = boardManager.TryGetAt(slotIndex, out var animal);
 
             // content 아래에 AnimalView가 있는지 확인
-            var existingAnimalView = content.GetComponentInChildren<AnimalView>(includeInactive: true);
+            var existingAnimalView = content.GetComponentInChildren<Drag>(includeInactive: true);
 
             if (!hasAnimal)
             {
@@ -89,7 +89,7 @@ public sealed class BoardUI : MonoBehaviour
                 }
 
                 var go = Instantiate(animalIconPrefab, content);
-                existingAnimalView = go.GetComponent<AnimalView>();
+                existingAnimalView = go.GetComponent<Drag>();
             }
 
             // 아이콘이 있으면 slotIndex 바인딩 (드롭 시 fromIndex가 이 값으로 들어감)
