@@ -5,7 +5,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
-/[UserSettings]/
+UserSettings/
 
 # Visual Studio / Rider / VS Code 관련
 .vs/
