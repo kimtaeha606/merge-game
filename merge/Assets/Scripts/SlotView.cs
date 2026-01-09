@@ -21,7 +21,7 @@ public sealed class SlotView : MonoBehaviour, IDropHandler
             return;
         }
 
-        var animalView = go.GetComponent<Animalview>();
+        var animalView = go.GetComponent<AnimalView>();
         if (animalView == null)
         {
             Debug.Log($"[SlotView] Drop on {index} but AnimalView not found on dragged");
