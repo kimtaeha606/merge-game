@@ -119,6 +119,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &158416770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 158416772}
+  - component: {fileID: 158416771}
+  m_Layer: 0
+  m_Name: MergeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &158416771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158416770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311a5261b3910d04695d51a5d4d6c94a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MergeManager
+--- !u!4 &158416772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158416770}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 248.98787, y: 380.46844, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &159823186
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,8 +463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed48400c227dce040b4f33823919f3db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardUI
-  boardManager: {fileID: 0}
-  mergeManager: {fileID: 0}
+  boardManager: {fileID: 760354533}
+  mergeManager: {fileID: 158416771}
   slotViews: []
   slotContents: []
   animalIconPrefab: {fileID: 2765347025978113210, guid: 6a4b4579d49630a46a1a432bb6c2de6d, type: 3}
@@ -1662,11 +1706,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6729449188659210682, guid: 6a4b4579d49630a46a1a432bb6c2de6d, type: 3}
   m_PrefabInstance: {fileID: 8303032906266294444}
   m_PrefabAsset: {fileID: 0}
---- !u!225 &1938586519 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 5779854951712399507, guid: 6a4b4579d49630a46a1a432bb6c2de6d, type: 3}
-  m_PrefabInstance: {fileID: 8303032906266294444}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2032091680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,18 +1845,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1449619521}
-    - target: {fileID: -7200247087605712755, guid: 6a4b4579d49630a46a1a432bb6c2de6d, type: 3}
-      propertyPath: canvasGroup
-      value: 
-      objectReference: {fileID: 1938586519}
     - target: {fileID: 2765347025978113210, guid: 6a4b4579d49630a46a1a432bb6c2de6d, type: 3}
       propertyPath: m_Name
       value: AnimalIcon_Test
       objectReference: {fileID: 0}
-    - target: {fileID: 5708514128406681726, guid: 6a4b4579d49630a46a1a432bb6c2de6d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -6013747887480821675, guid: 9f0e204bb2407d2448365835cf1189ab, type: 3}
     - target: {fileID: 6729449188659210682, guid: 6a4b4579d49630a46a1a432bb6c2de6d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1912,3 +1943,4 @@ SceneRoots:
   - {fileID: 432754181}
   - {fileID: 1449619522}
   - {fileID: 1624304711}
+  - {fileID: 158416772}

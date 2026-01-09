@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18.648407, y: -39.736908}
+  m_AnchoredPosition: {x: -0.3, y: -0.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3257491263383627899
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6013747887480821675, guid: 9f0e204bb2407d2448365835cf1189ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalView
   slotIndex: 0
   canvas: {fileID: 0}
-  canvasGroup: {fileID: 0}
+  canvasGroup: {fileID: 5779854951712399507}
 --- !u!225 &5779854951712399507
 CanvasGroup:
   m_ObjectHideFlags: 0

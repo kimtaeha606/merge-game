@@ -14,6 +14,7 @@ public sealed class SlotView : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
+        Debug.Log($"DROP CALLED on slot {index}");
         var go = eventData.pointerDrag;
         if (go == null)
         {
