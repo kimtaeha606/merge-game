@@ -10,10 +10,6 @@ public sealed class SlotView : MonoBehaviour, IDropHandler
     [SerializeField] private BoardUI boardUI;
     public int Index => index;
 
-    private void Awake()
-    {
-        boardUI = FindFirstObjectByType<BoardUI>();
-    }
     public void SetIndex(int value) => index = value;
 
     public void OnDrop(PointerEventData eventData)
@@ -25,16 +21,16 @@ public sealed class SlotView : MonoBehaviour, IDropHandler
             return;
         }
 
-        var animalView = go.GetComponent<Drag>();
-        if (animalView == null)
+        var drag = go.GetComponent<Drag>();
+        if (drag == null)
         {
             Debug.Log($"[SlotView] Drop on {index} but AnimalView not found on dragged");
             return;
         }
 
-        Debug.Log($"[SlotView] Drop success: from {animalView.SlotIndex} -> to {index}");
+        Debug.Log($"[SlotView] Drop success: from {drag.SlotIndex} -> to {index}");
 
-        int from = animalView.SlotIndex;
+        int from = drag.SlotIndex;
         int to = index;
 
         boardUI.HandleDrop(from, to);
