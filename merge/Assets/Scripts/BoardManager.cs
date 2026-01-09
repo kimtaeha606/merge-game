@@ -18,6 +18,12 @@ public class BoardManager : MonoBehaviour
     /// 3×3 보드를 빈 상태로 리셋한다.
     /// GameManager에서 이 함수를 호출한다.
     /// </summary>
+    /// 
+    private void Awake()
+    {
+        if (slots == null || slots.Length != Size)
+            slots = new AnimalInstance[Size];
+    }
     public void ResetBoard()
     {
         slots = new AnimalInstance[Size]; // 기본값 null → 전부 빈 칸
