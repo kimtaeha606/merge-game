@@ -14,4 +14,5 @@ public sealed class AnimalData : ScriptableObject
 
     [Header("Progression")]
     public AnimalData nextTierAnimal; // Tier10 => null
+    public Sprite sprite;
 }
