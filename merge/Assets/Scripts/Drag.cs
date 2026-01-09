@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 // 인터페이스 상속이 반드시 필요합니다.
-public sealed class AnimalView : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public sealed class Drag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("State")]
     [SerializeField] private int slotIndex;
