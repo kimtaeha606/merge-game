@@ -1,12 +1,17 @@
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Mm]emoryCaptures/
-UserSettings/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Mm]emoryCaptures/
+/[UserSettings]/
+
+# Visual Studio / Rider / VS Code 관련
 .vs/
+.gradle/
+ExportedObj/
+.consulo/
 *.csproj
 *.unityproj
 *.sln
@@ -16,5 +21,20 @@ UserSettings/
 *.userprefs
 *.pidb
 *.booproj
+*.svd
+*.pdb
+*.opendb
+*.IDB
+*.VC.db
 
-.DS_Store
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt
+
+# Builds
+*.apk
+*.unitypackage
