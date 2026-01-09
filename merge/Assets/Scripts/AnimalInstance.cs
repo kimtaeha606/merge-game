@@ -12,9 +12,11 @@ public sealed class AnimalInstance
     public int Tier => data != null ? data.tier : 0;
     public int IncomePerTick => data != null ? data.incomePerTick : 0;
     public float TickInterval => data != null ? data.tickInterval : 0f;
-
+    
+    public float TickTimer { get; set; }
     public AnimalInstance(AnimalData data)
     {
         this.data = data;
+        TickTimer = 0f;
     }
 }
