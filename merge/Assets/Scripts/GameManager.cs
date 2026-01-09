@@ -6,11 +6,27 @@ public class GameManager : MonoBehaviour
     [SerializeField] private BoardManager boardManager;
     [SerializeField] private PurchaseManager purchaseManager;
     [SerializeField] private DiceManager diceManager;
+    [SerializeField] private EconomyManager economyManager;
+    [SerializeField] private MoneyManager moneyManager;
+
+    private const float TickDelta = 1f;
+    private float acc;
 
     private void Start()
     {
         StartNewGame();
         // TrySpawnAnimalOnce(); // 테스트용 제거/주석 권장
+    }
+
+    private void Update()
+    {
+        acc += Time.deltaTime;
+
+        while (acc > TickDelta)
+        {
+            acc -= TickDelta;
+            economyManager.Tick(TickDelta);
+        }
     }
 
     private void OnEnable()
@@ -27,13 +43,20 @@ public class GameManager : MonoBehaviour
 
     public void StartNewGame()
     {
+        acc = 0f;
+
+        if (boardManager != null)
+            boardManager.ResetBoard();
+        if (moneyManager != null)
+            moneyManager.ResetMoney(0);
+
         if (boardManager == null)
         {
             Debug.LogError("GameManager: BoardManager missing");
             return;
         }
 
-        boardManager.ResetBoard();
+        
     }
 
     private void HandlePurchaseSucceeded()
