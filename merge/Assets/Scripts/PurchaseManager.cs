@@ -9,7 +9,7 @@ using UnityEngine;
 public class PurchaseManager : MonoBehaviour
 {
     [Header("Dependencies")]
-    [SerializeField] private EconomyManager economy;
+    [SerializeField] private MoneyManager money;
 
     public event Action OnPurchaseSucceeded;
     public event Action OnPurchaseFailed; // (선택) 돈 부족/기타 사유 구분이 필요하면 enum 추가
@@ -23,14 +23,14 @@ public class PurchaseManager : MonoBehaviour
             return;
         }
 
-        if (economy == null)
+        if (money == null)
         {
             Debug.LogError("PurchaseManager: EconomyManager reference is missing.");
             OnPurchaseFailed?.Invoke();
             return;
         }
 
-        if (!economy.TrySpend(cost))
+        if (!money.TrySpend(cost))
         {
             OnPurchaseFailed?.Invoke();
             return;
