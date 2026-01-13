@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f6447b49d662e4e95f563ffecf0c62, type: 3}
+  m_Name: GameConfig_Main
+  m_EditorClassIdentifier: Assembly-CSharp::GameConfig
+  animalsByTier:
+  - {fileID: 11400000, guid: 2fa29ec800b754246be62a112279f0d1, type: 2}
+  - {fileID: 11400000, guid: 5036d1584d9738541bf4dc06afcf161e, type: 2}
+  - {fileID: 11400000, guid: 6152895437c5c1547bff5d89e3c7b840, type: 2}
+  - {fileID: 11400000, guid: f71a0e7699b741449be1de7bb0ff0595, type: 2}
+  - {fileID: 11400000, guid: baa13fbace362ee44b605b52836fd028, type: 2}
+  - {fileID: 11400000, guid: 06bae8f7a0e033544bd4a16c89ededda, type: 2}
+  - {fileID: 11400000, guid: 9452b7add8f4b1145b333050dd964183, type: 2}
+  - {fileID: 11400000, guid: 2d6dc7987318ad547b7f4fe2328f2327, type: 2}
+  - {fileID: 11400000, guid: 8ebbc006448c3914da89ebab078f8bd8, type: 2}
+  - {fileID: 11400000, guid: f9bcb52d58949244e9ada8e217916df9, type: 2}
+  mergeRequireCount: 2
